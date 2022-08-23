@@ -1,16 +1,23 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.7.10'
     id 'application'
+    id 'org.jetbrains.kotlin.jvm' version '1.7.10'
+    id "com.github.ben-manes.versions" version '0.42.0'
 }
 
 group = 'org.example'
 version = '1.0-SNAPSHOT'
 
 repositories {
+    google()
     mavenCentral()
 }
 
 dependencies {
+    implementation "redis.clients:jedis:$redis_version"
+
+    implementation "io.github.microutils:kotlin-logging:$logging_version"
+    implementation "ch.qos.logback:logback-classic:$logback_version"
+
     testImplementation 'org.jetbrains.kotlin:kotlin-test'
 }
 

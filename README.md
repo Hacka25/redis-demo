@@ -9,7 +9,7 @@ docker run -d -p 6379:6379 --name myredis redis
 
 Connect to the server with:
 ```bash
-redis-cli
+iredis
 ```
 or:
 
