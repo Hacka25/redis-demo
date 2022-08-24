@@ -9,11 +9,11 @@ object Publish {
 
     // Publish begin
     repeat(100) {
-      val city = Cities.values()[Random.nextInt(3)].name
-      val channel = "weather:$city"
+      val stock = Stocks.values()[Random.nextInt(Stocks.values().size)].name
+      val channel = "stocks:$stock"
       val temp = Random.nextInt(32, 100)
 
-      println("Publishing $channel temperature $temp")
+      println("Publishing $channel price $temp")
 
       jedis.publish(channel, temp.toString())
 

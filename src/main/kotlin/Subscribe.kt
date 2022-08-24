@@ -22,7 +22,7 @@ object Subscribe {
 
     val myListener = MyListener()
 
-    jedis.subscribe(myListener, "weather:${Cities.Concord.name}")
+    jedis.subscribe(myListener, "stocks:${Stocks.AAPL.name}")
 
     Thread.sleep(100000)
     // Subscribe end
