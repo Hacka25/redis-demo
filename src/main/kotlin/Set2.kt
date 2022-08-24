@@ -7,9 +7,9 @@ import redis.clients.jedis.JedisPooled
 object Set2 {
   @JvmStatic
   fun main(args: Array<String>) {
-    // Set2 begin
     val jedis = JedisPooled("localhost", 6379)
 
+    // Set2 begin
     @Serializable
     data class User(
       val username: String,
