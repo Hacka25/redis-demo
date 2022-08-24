@@ -6,19 +6,15 @@ object Set1 {
     // Set1 begin
     val jedis = JedisPooled("localhost", 6379)
 
-    repeat(5) { jedis.set("foo:$it", "Hello-$it"); }
+    jedis.set("key1", "Hello");
 
-    repeat(5) {
-      val v = jedis.get("foo:$it")
-      println("foo:$it=$v")
-    }
+    val v1 = jedis.get("key1")
+    println("key1=$v1")
 
-    repeat(5) { jedis.del("foo:$it"); }
+    jedis.del("key1")
 
-    repeat(5) {
-      val v = jedis.get("foo:$it")
-      println("foo:$it=$v")
-    }
+    val v2 = jedis.get("key1")
+    println("key1=$v2")
     // Set1 end
   }
 }
