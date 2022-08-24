@@ -1,9 +1,9 @@
 import redis.clients.jedis.JedisPooled
 
-object Set {
+object Set1 {
   @JvmStatic
   fun main(args: Array<String>) {
-    // Set begin
+    // Set1 begin
     val jedis = JedisPooled("localhost", 6379)
 
     repeat(5) { jedis.set("foo:$it", "Hello-$it"); }
@@ -19,6 +19,6 @@ object Set {
       val v = jedis.get("foo:$it")
       println("foo:$it=$v")
     }
-    // Set end
+    // Set1 end
   }
 }
