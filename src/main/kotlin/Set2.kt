@@ -11,7 +11,11 @@ object Set2 {
     val jedis = JedisPooled("localhost", 6379)
 
     @Serializable
-    data class User(val username: String, val firstName: String, val lastName: String)
+    data class User(
+      val username: String,
+      val firstName: String,
+      val lastName: String
+    )
 
     val user1 = User("martina", "Martina", "Elisa")
     val json1 = Json.encodeToString(user1)
