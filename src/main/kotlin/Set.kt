@@ -1,13 +1,24 @@
 import redis.clients.jedis.JedisPooled
 
-fun main() {
-  val jedis = JedisPooled("localhost", 6379)
+object Set {
+  @JvmStatic
+  fun main(args: Array<String>) {
+    // Set begin
+    val jedis = JedisPooled("localhost", 6379)
 
-  repeat(5) { jedis.set("foo:$it", "Hello-$it"); }
+    repeat(5) { jedis.set("foo:$it", "Hello-$it"); }
 
-  repeat(5) { println("foo:$it=${jedis.get("foo:$it")}") }
+    repeat(5) {
+      val v = jedis.get("foo:$it")
+      println("foo:$it=$v")
+    }
 
-  repeat(5) { jedis.del("foo:$it"); }
+    repeat(5) { jedis.del("foo:$it"); }
 
-  repeat(5) { println("foo:$it=${jedis.get("foo:$it")}") }
+    repeat(5) {
+      val v = jedis.get("foo:$it")
+      println("foo:$it=$v")
+    }
+    // Set end
+  }
 }
