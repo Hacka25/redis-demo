@@ -5,7 +5,7 @@ import kotlinx.serialization.json.Json
 import redis.clients.jedis.JedisPooled
 import kotlin.random.Random
 
-object Submitter {
+object SubmitWork {
   @JvmStatic
   fun main(args: Array<String>) {
     val jedis = JedisPooled("localhost", 6379)
