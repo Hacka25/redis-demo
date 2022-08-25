@@ -12,7 +12,7 @@ object ExecuteWork {
     workers.forEach { worker ->
       executor.submit {
         while (true) {
-          val workDesc = worker.readQueue("work_queue:render")
+          val workDesc = worker.removeWorkFromQueue("work_queue:render")
           worker.executeWork(workDesc)
         }
       }

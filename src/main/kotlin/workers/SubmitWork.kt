@@ -14,7 +14,7 @@ object SubmitWork {
     // slide begin
     repeat(10000) {
       val workDesc = WorkDesc(cnt++, Random.nextInt(1, 15))
-      println("Submitting work item that takes ${workDesc.timeRequired} secs")
+      println("Submitting work item: $workDesc")
       val json = Json.encodeToString(workDesc)
       jedis.lpush("work_queue:render", json)
       Thread.sleep(1000)

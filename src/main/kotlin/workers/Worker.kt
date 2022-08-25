@@ -9,7 +9,7 @@ class Worker(val id: Int) {
   val jedis = JedisPooled("localhost", 6379)
   var workCount = 0
 
-  fun readQueue(queueName: String): WorkDesc {
+  fun removeWorkFromQueue(queueName: String): WorkDesc {
     val json = jedis.brpop(0.0, queueName).value
     return Json.decodeFromString(json)
   }
