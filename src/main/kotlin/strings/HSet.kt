@@ -1,9 +1,11 @@
+package strings
+
 import redis.clients.jedis.JedisPooled
 
-object HSet1 {
+object HSet {
   @JvmStatic
   fun main(args: Array<String>) {
-    // HSet1 begin
+    // slide begin
     val jedis = JedisPooled("localhost", 6379)
 
     jedis.hset(
@@ -17,6 +19,6 @@ object HSet1 {
 
     val valMap: Map<String, String> = jedis.hgetAll("user:123")
     println("user:123=$valMap")
-    // HSet1 end
+    // slide end
   }
 }

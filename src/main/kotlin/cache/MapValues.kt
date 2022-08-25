@@ -1,11 +1,13 @@
+package cache
+
 import redis.clients.jedis.JedisPooled
 
-object HSet2 {
+object MapValues {
   @JvmStatic
   fun main(args: Array<String>) {
     val jedis = JedisPooled("localhost", 6379)
 
-    // HSet2 begin
+    // slide begin
     data class User(val map: Map<String, String>) {
       val username: String by map
       val firstName: String by map
@@ -23,6 +25,6 @@ object HSet2 {
     val map2 = jedis.hgetAll("user:123")
     val user2 = User(map2)
     println("user2=$user2")
-    // HSet2 end
+    // slide end
   }
 }

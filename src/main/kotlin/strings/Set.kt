@@ -1,9 +1,11 @@
+package strings
+
 import redis.clients.jedis.JedisPooled
 
-object Set1 {
+object Set {
   @JvmStatic
   fun main(args: Array<String>) {
-    // Set1 begin
+    // slide begin
     val jedis = JedisPooled("localhost", 6379)
 
     jedis.set("key1", "Hello");
@@ -15,6 +17,6 @@ object Set1 {
 
     val v2 = jedis.get("key1")
     println("key1=$v2")
-    // Set1 end
+    // slide end
   }
 }
