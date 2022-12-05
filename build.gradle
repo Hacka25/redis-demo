@@ -1,8 +1,8 @@
 plugins {
     id 'application'
-    id 'org.jetbrains.kotlin.jvm' version '1.7.21'
-    id 'org.jetbrains.kotlin.plugin.serialization' version '1.7.21'
-    id "com.github.ben-manes.versions" version '0.42.0'
+    id 'org.jetbrains.kotlin.jvm' version '1.8.0-Beta'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.8.0-Beta'
+    id "com.github.ben-manes.versions" version '0.44.0'
 }
 
 group = 'org.example'
@@ -15,9 +15,7 @@ repositories {
 
 dependencies {
     implementation "redis.clients:jedis:$redis_version"
-
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:$json_version"
-
     implementation "io.github.microutils:kotlin-logging:$logging_version"
     implementation "ch.qos.logback:logback-classic:$logback_version"
 
