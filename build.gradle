@@ -1,7 +1,7 @@
 plugins {
     id 'application'
-    id 'org.jetbrains.kotlin.jvm' version '1.8.0-Beta'
-    id 'org.jetbrains.kotlin.plugin.serialization' version '1.8.0-Beta'
+    id 'org.jetbrains.kotlin.jvm' version '1.8.0'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.8.0'
     id "com.github.ben-manes.versions" version '0.44.0'
 }
 
